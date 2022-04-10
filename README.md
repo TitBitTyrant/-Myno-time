@@ -10,7 +10,7 @@ Get a unix timestamps, timezone, humanreadable-time without struggling a bit!
 
  # Example
 
- ```
+ ```js
 CommonJS
 const { getUnix, getHumanReadableTime, getTimezone } = require("@myno/time");
 
