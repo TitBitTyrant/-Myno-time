@@ -8,14 +8,14 @@ Get a unix timestamp, timezone, humanreadable-time without struggling a bit!
 npm install @myno_21/time
  ```
 
- # Example
+# Example
 
- ```js
+```js
 //CommonJS
-const { getUnix, getHumanReadableTime, getTimezone } = require("@myno/time");
+const { getUnix, getHumanReadableTime, getTimezone } = require("@myno_21/time");
 
 //ECMAScript/ESM
-import { getUnix, getHumanReadableTime, getTimezone } from "@myno/time"';
+import { getUnix, getHumanReadableTime, getTimezone } from "@myno_21/time"'
 
 getUnix(`4 days`) // → 1649923729
 
