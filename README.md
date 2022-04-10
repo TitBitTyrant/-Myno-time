@@ -11,10 +11,10 @@ Get a unix timestamps, timezone, humanreadable-time without struggling a bit!
  # Example
 
  ```js
-CommonJS
+//CommonJS
 const { getUnix, getHumanReadableTime, getTimezone } = require("@myno/time");
 
-ECMAScrip/ESM
+//ECMAScript/ESM
 import { getUnix, getHumanReadableTime, getTimezone } from "@myno/time"';
 
 getUnix(`4 days`) // → 839289308
