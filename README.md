@@ -19,7 +19,7 @@ import { getUnix, getHumanReadableTime, getTimezone } from "@myno_21/time"'
 
 getUnix(`4 days`) // → 1649923729
 
-getHumanReadableTime('1649923729', { Lengthy: true }); // → 839289308
+getHumanReadableTime('1649923729', { Lengthy: true }); // → April 14th 2022, 1:38:49 pm
 
 getTimezone('India' || "New Delhi") // → Asia/Kolkata 4/10/2022, 1:40:14 PM, India/IN
 
