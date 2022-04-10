@@ -5,7 +5,7 @@ Get a unix timestamp, timezone, humanreadable-time without struggling a bit!
  # ❔Installation
 
  ```
- npm install @myno/time
+npm install @myno_21/time
  ```
 
  # Example
