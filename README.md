@@ -1,6 +1,6 @@
 # @Myno-time
 
-Get a unix timestamps, timezone, humanreadable-time without struggling a bit!
+Get a unix timestamp, timezone, humanreadable-time without struggling a bit!
  
  # ❔Installation
 
