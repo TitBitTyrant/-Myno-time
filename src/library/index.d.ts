@@ -1,13 +1,12 @@
-import { AllowedThreadTypeForNewsChannel } from "discord.js"
+import { TypedEmitter } from "tiny-typed-emitter";
 
-    export interface Options{
-
-        /**
+export interface Options {
+  /**
 
          * @throws {RangeError} Throw an error if the specified time isn't valid!
          * @Usage `getUnix(`3 days`)` output → `1649748877`
          */
-        time?: string
+  time?: string;
 }
 
 /**
@@ -26,11 +25,10 @@ import { AllowedThreadTypeForNewsChannel } from "discord.js"
 ```
  */
 
+export function getUnix(time?: string): String | RangeError;
 
-export function getUnix(time?: string): Options | RangeError;
-
-declare namespace DataString{
-    interface Options {
+declare namespace DataString {
+  interface Options {
     /**
 		@Display the time in a lengthy form! as: "April 11th 2022, 12:26:29 pm" instead of "April 11th 2022, 12:26:29 pm"
      
@@ -41,8 +39,8 @@ declare namespace DataString{
         @default false
 
         */
-        Lengthy?: boolean
-}
+    Lengthy?: boolean;
+  }
 }
 
 /**
@@ -63,18 +61,19 @@ declare namespace DataString{
     import { getHumanReadableTime } from "@fetch/time"
     
 ```
-*/ 
+*/
 
-export function getHumanReadableTime(time: number, options?: DataString.Options): string | RangeError;
+export function getHumanReadableTime(
+  time: number,
+  options?: DataString.Options
+): string | RangeError;
 
-export interface TimeValue{
-
-           /**
-         * @value Specify a value.
-         * @throws {RangeError} Throw an error if the specified value isn't valid!
-         */
-            value?: string
-
+export interface TimeValue {
+  /**
+   * @value Specify a value.
+   * @throws {RangeError} Throw an error if the specified value isn't valid!
+   */
+  value?: string;
 }
 
 /**
@@ -96,7 +95,7 @@ export interface TimeValue{
 ```
  *
  */
-export function getTimezone(value?: string): TimeValue | RangeError
+export function getTimezone(value?: string): String | RangeError;
 
 /**
  * @Converts a date to the localize time format like "04/04/2022" ➟ "2 weeks ago"
@@ -117,11 +116,10 @@ export function getTimezone(value?: string): TimeValue | RangeError
     ```
  */
 
-export function getTimeFromNow(value?: String): String
+export function getTimeFromNow(value?: String): String;
 
-
-declare namespace AllType{
-    interface Options {
+declare namespace AllType {
+  interface Options {
     /**
 		@Displays the day of the formatted date!
      
@@ -131,16 +129,16 @@ declare namespace AllType{
         @default false
 
         */
-        longFormat?: boolean
+    longFormat?: boolean;
+  }
 }
-};
 
 /**
  * ★ Get a formatted time!
  * @param value Specify a date to format!
  * @throws {RangeError} Throw an error if the specified date is invalid!
 * @param {options} options Choose the long/short format of the formatted time.
-  @usage getFormattedTime("Date-here");
+@usage getFormattedTime("Date-here");
   
   @SampleExample
 ```js
@@ -158,5 +156,177 @@ console.log(getFormattedTime(`2022-12-01Z00:00:00.000`), { longFormat: true }) /
 
  */
 
+export function getFormattedTime(
+  value?: String,
+  options?: AllType.Options
+): String;
 
-export function getFormattedTime(value?: String, options: AllType.Options)
+export interface ObjectProtoTypeData {
+  /**
+   * @default
+   * @property ★ Returns the number of days in the specified date!
+   * @throws {undefined} Returns 'undefined' if the specified value isn't valid
+   * @return {Number}
+   */
+
+  days?: Number;
+
+  /**
+   * @default
+   * @property ★ Returns the number of hours in the specified date!
+   * @throws {undefined} Returns 'undefined' if the specified value isn't valid
+   * @return {Number}
+   */
+
+  hours?: Number;
+
+  /**
+   * @default
+   * @property ★ Returns the number of minutes in the specified date!
+   * @throws {undefined} Returns 'undefined' if the specified value isn't valid
+   * @return {Number}
+   */
+
+  minutes?: Number;
+
+  /**
+   * @default
+   * @property ★ Returns the number of seconds in the specified date!
+   * @throws {undefined} Returns 'undefined' if the specified value isn't valid
+   * @return {Number}
+   */
+
+  seconds?: Number;
+
+  /**
+   * @default
+   * @property ★ Returns the number of milliseconds in the specified date!
+   * @throws {undefined} Returns 'undefined' if the specified value isn't valid
+   * @return {Number}
+   */
+
+  milliseconds?: Number;
+}
+
+/**
+ * @default
+ * @function Parse milliseconds into an object containing days, hours, minutes, seconds and milliseconds
+ * @param value ★ Milliseconds to parse.
+ * @throws {RangeError} Throw an error if the specified value is invalid!
+ * @usage getFormattedMilliseconds(`milliseconds-here`); 
+ * @SampleExample
+ * ```js
+ // CommonJS
+const { getFormattedMilliseconds } = require("@myno_21/time");
+// ECMAScript
+import { getFormattedMilliseconds } from "@myno_21/time";
+
+console.log(getFormattedMilliseconds(103680000));
+// Result
+// { days: 1, hours: 4, minutes: 48, seconds: 0, milliseconds: 0 }
+ * ```
+ * @return {Object}
+ */
+
+export function getFormattedMilliseconds(value?: Number): ObjectProtoTypeData;
+
+declare namespace FunctionalOptions {
+  interface Options {
+    /**
+     * @default
+     * @this option might be useful when you only want the current time to be shown. Instead of the current day. month etc etc.
+     * @throws {RangeError | Error} If you didn't specified a boolean.
+     * @property showTimeOnly  - By agreeing to this property to "true". You're disallowing in the the default option "false"
+     * @default false
+     * @return
+     */
+    showTimeOnly?: boolean;
+
+    /**
+     * @default
+     * @this option might be useful when you want the response in a short manner instead of the long default manner.,
+     * @throws {RangeError | Error} If you didn't specified a boolean.
+     * @property showInShortManner  - By agreeing to this property to "true". You're disallowing in the the default option "false"
+     * @default false
+     * @return
+     */
+    showInShortManner?: boolean;
+  }
+}
+/**
+ * @default
+ * @function Formats the current time in a bit cleaner manner.
+ * @param options ★ The specified options.
+ * @usage getCurrentFormattedTime()
+ * @SampleExample
+ * ```js
+ // CommonJS
+const { getCurrentFormattedTime } = require("@myno_21/time");
+// ECMAScript
+import { getCurrentFormattedTime } from "@myno_21/time";
+// Default Option
+const _resultDefault = getCurrentFormattedTime();
+// Option 1
+const _resultshowInShortManner = getCurrentFormattedTime({
+    showInShortManner: true
+})
+// Option 2
+const _resultWithshowTimeOnly = getCurrentFormattedTime({
+    showTimeOnly: true
+})
+// Default:
+console.log(_resultDefault) //--> September 05, Monday 01:11 PM
+// With the option "showInShortManner"
+console.log(_resultshowInShortManner) //--> Sep 05, Mon 01:11 PM
+// With the option "showTimeOnly"
+console.log(_resultWithshowTimeOnly) // --> 01:11 PM
+ * ```
+ * @return {String}
+ */
+export function getCurrentFormattedTime(
+  options?: FunctionalOptions.Options
+): String;
+interface EventsOptions {
+  days?: number;
+  hours?: number;
+  minutes?: number;
+  seconds?: number;
+  milliseconds?: number;
+}
+interface mainEvents {
+  setTime: (_formattedTime: string, reamainingTime?: EventsOptions) => {};
+  timeEnd: (timeEnd: EventsOptions) => {};
+}
+/**
+ * @default
+ * @class ★ Sets a complete timer for you. With events!
+ * @event Options This events options.
+ * @example
+ * ```
+  // CommonJS
+const { Timer } = require("@myno_21/time");
+// ECMAScript
+import { Timer } from "@myno_21/time";
+const timer = new Timer() //Setting the timer.
+
+timer.on("timeSet", (timeObject, remainingTime) => {
+    // Do something with it.
+  console.log("The timer is now set!") // Logging when the timer is set.
+})
+timer.on("timeEnd", (time) => {
+  // Do something with it.
+    console.log("The time is now owner!") // Logging when the timer is ended.
+})
+ * ```
+* @default false
+ * @return
+ */
+export class Timer extends TypedEmitter<mainEvents> {
+  /**
+   * @default
+   * @param time ★ The specified time.
+   * @throws {Error} Throws an error if their was no time specified.
+   * @return
+   */
+  constructor(time?: string);
+}
