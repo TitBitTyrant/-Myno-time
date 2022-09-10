@@ -294,7 +294,7 @@ interface EventsOptions {
   milliseconds?: number;
 }
 interface mainEvents {
-  setTime: (_formattedTime: string, reamainingTime?: EventsOptions) => {};
+  setTime: (reamainingTime: EventsOptions, _formattedTime?: string) => {};
   timeEnd: (timeEnd: EventsOptions) => {};
 }
 /**
@@ -330,3 +330,38 @@ export class Timer extends TypedEmitter<mainEvents> {
    */
   constructor(time?: string);
 }
+declare namespace accumulatedOptions {
+  interface Options {
+    targetOnSeconds?: boolean;
+    targetOnMinutes?: boolean;
+    targetOnHours?: boolean;
+  }
+}
+
+/**
+ * @default
+ * @function secondsToDuration ★ Coverts seconds to a duration!
+ *@throws {RangeError} Throws an range error if their is not seconds specified.
+ *  @throws {Error} Throws an error if the specified date is not valid.
+ * @example
+ * ```
+  // CommonJS
+const { secondsToDuration } = require("@myno_21/time");
+// ECMAScript
+import { secondsToDuration } from "@myno_21/time";
+
+const timeInHours = secondsToDuration(3640);
+const timeInSeconds = secondsToDuration(20);
+const timeinMinutes = secondsToDuration(610);
+
+console.log(timeInHours); // --> 01 : 00 : 40
+console.log(timeInSeconds); // --> 00 : 20
+console.log(timeinMinutes); // --> 10 : 10
+ * ```
+* @default false
+ * @return
+ */
+export function secondsToDuration(
+  s3conds?: number,
+  options?: accumulatedOptions.Options
+): string;

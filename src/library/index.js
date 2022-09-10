@@ -410,10 +410,50 @@ class Timer extends eventEmitter {
     }, ms("0.1ms"));
   }
 }
+/**
+ * @param {String} s3conds
+ */
+const secondsToDuration = (s3conds, options = {}) => {
+  if (!s3conds) throw new RangeError(`No seconds specified.`);
+  var seconds = typeof s3conds === "string" ? Number(s3conds) : s3conds;
+  var date = new Date(seconds * 1000);
+
+  if (date.toString() === "Invalid Date")
+    throw new Error("Not a valid date specified!");
+  var hh = date.getUTCHours();
+  var mm = date.getUTCMinutes();
+  var ss = date.getSeconds();
+  if (hh < 10) {
+    hh = "0" + hh;
+  }
+  if (mm < 10) {
+    mm = "0" + mm;
+  }
+  if (ss < 10) {
+    ss = "0" + ss;
+  }
+
+  const time = hh ? hh === "00" : mm + ss;
+
+  if (options?.targetOnSeconds) {
+    return ss;
+  } else if (options.targetOnMinutes) {
+    return mm;
+  } else if (options.targetOnHours) {
+    return hh;
+  } else {
+    if (time) {
+      return `${mm} : ${ss}`;
+    } else {
+      return `${hh} : ${mm} : ${ss}`;
+    }
+  }
+};
 module.exports = {
   getUnix,
   getHumanReadableTime,
   getTimezone,
+  secondsToDuration,
   getTimeFromNow,
   getFormattedTime,
   Timer,
