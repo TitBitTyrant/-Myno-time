@@ -16,6 +16,7 @@
 - getFormattedMilliseconds _(Formats milliseconds into an object containing days, hours, minutes, seconds and milliseconds)_
 - getCurrentFormattedTime _(Formats the current time in a bit cleaner manner)_
 - Timer _(Sets a complete timer for you. With events.)_
+- Seconds To Duration _(Converts seconds to a duration.)_
 
 ## Features 📣
 
@@ -26,6 +27,7 @@
 - Get a formatted time.
 - Get the current in a formatted manner with some cool options.
 - Sets a timer for your. With the timer events.
+- Converts seconds to a proper formatted duration.
 
 # ❔Installation
 
@@ -151,6 +153,23 @@ timer.on("timeEnd", (time) => {
   // Do something with it.
   console.log("The time is now owner!"); // Logging when the timer is ended.
 });
+```
+
+- # ★ Seconds To Duration
+
+```js
+// CommonJS
+const { secondsToDuration } = require("@myno_21/time");
+// ECMAScript
+import { secondsToDuration } from "@myno_21/time";
+
+const timeInHours = secondsToDuration(3640);
+const timeInSeconds = secondsToDuration(20);
+const timeinMinutes = secondsToDuration(610);
+
+console.log(timeInHours); // --> 01 : 00 : 40
+console.log(timeInSeconds); // --> 00 : 20
+console.log(timeinMinutes); // --> 10 : 10
 ```
 
 ## ★ Previous Packages
