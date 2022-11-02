@@ -143,7 +143,7 @@ console.log(_resultWithshowTimeOnly); // --> 01:11 PM
 const { Timer } = require("@myno_21/time");
 // ECMAScript
 import { Timer } from "@myno_21/time";
-const timer = new Timer(); //Setting the timer.
+const timer = new Timer("2minutes"); //Setting the timer.
 
 timer.on("timeSet", (timeObject, remainingTime) => {
   // Do something with it.
@@ -151,7 +151,7 @@ timer.on("timeSet", (timeObject, remainingTime) => {
 });
 timer.on("timeEnd", (time) => {
   // Do something with it.
-  console.log("The time is now owner!"); // Logging when the timer is ended.
+  console.log("The time is now over!"); // Logging when the timer is ended.
 });
 ```
 
@@ -172,9 +172,25 @@ console.log(timeInSeconds); // --> 00 : 20
 console.log(timeinMinutes); // --> 10 : 10
 ```
 
+- # ★ Format Number
+
+```js
+// CommonJS
+const { formatNumbers } = require("@myno_21/time");
+// ECMAScript
+import { formatNumbers } from "@myno_21/time";
+
+const result = formatNumbers(2234);
+
+print(result);
+// Result --> 2.2K
+function print(query) {
+  console.log(query);
+}
+```
+
 ## ★ Previous Packages
 
-- [@myno_21/formatted-duration](https://www.npmjs.com/package/@myno_21/formatted-duration) _(Format seconds/milliseconds to a date/duration without struggling a bit!)_
 - [@myno_21/password-generator](https://www.npmjs.com/package/@myno_21/password-generator)_(Generates random passwords with some really cool options such as limit,includes etc.)_
 
   [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://www.javascript.com/)
