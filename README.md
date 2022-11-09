@@ -145,11 +145,11 @@ const { Timer } = require("@myno_21/time");
 import { Timer } from "@myno_21/time";
 const timer = new Timer("2minutes"); //Setting the timer.
 
-timer.on("timeSet", (timeObject, remainingTime) => {
+timer.on("setTime", (timeObject, remainingTime) => {
   // Do something with it.
   console.log("The timer is now set!"); // Logging when the timer is set.
 });
-timer.on("timeEnd", (time) => {
+timer.on("timeEnd", (timeObject, setOn) => {
   // Do something with it.
   console.log("The time is now over!"); // Logging when the timer is ended.
 });
