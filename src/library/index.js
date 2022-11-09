@@ -398,14 +398,16 @@ class Timer extends eventEmitter {
         ? RangeError("Not a valid time specified.")
         : Error("Not a valid time specified.");
     var _formattedTime = getUnix(time);
+
     var _mappedTime = getHumanReadableTime(_formattedTime, {
       Lengthy: true,
     });
     const setTime = getFormattedMilliseconds(_syncedMilliseconds);
+    const setOn = getCurrentFormattedTime();
     setTimeout(async () => {
       this.emit("setTime", setTime, _mappedTime);
       setTimeout(async () => {
-        this.emit("timeEnd", setTime);
+        this.emit("timeEnd", setTime, setOn);
       }, _syncedMilliseconds);
     }, ms("0.1ms"));
   }

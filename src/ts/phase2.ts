@@ -79,4 +79,5 @@ function formatNumbers(number: number | void, options?: Options): string {
     } else return String(number);
   }
 }
+
 export { formatNumbers };
