@@ -10,7 +10,8 @@ const {
   getUnix,
 } = require("../library/index.js");
 const { formatNumbers } = require("../library/phase2.js");
-
+const { isValidDate } = require("../library/functions.js");
+const { isValid } = require("../common/index.js");
 // exporting all the functions using the commonJS "module.exports"
 module.exports = {
   // V1
@@ -24,6 +25,8 @@ module.exports = {
   getTimeFromNow,
   getTimezone,
   getUnix,
+  isValidDate,
+  isValid, // --> Deprecated
   formatNumbers,
   // V2
 };

@@ -13,7 +13,8 @@
 
 ### Added some more features:
 
-- getFormattedMilliseconds _(Formats milliseconds into an object containing days, hours, minutes, seconds and milliseconds)_
+- getFormattedMilliseconds _(Formats milliseconds into an object containing days, hours, minutes, seconds and milliseconds)_ ~
+- Added the "isValidDate" function to the package.
 - getCurrentFormattedTime _(Formats the current time in a bit cleaner manner)_
 - Timer _(Sets a complete timer for you. With events.)_
 - Seconds To Duration _(Converts seconds to a duration.)_
@@ -187,6 +188,19 @@ print(result);
 function print(query) {
   console.log(query);
 }
+```
+
+- # ★ Valid Date
+
+```ts
+// CommonJS
+const { isValidDate } = require("@myno_21/time");
+// ECMAScript
+import { isValidDate } from "@myno_21/time";
+
+console?.log(isValidDate("2021-01-24")); //--> true
+console?.log(isValidDate("2020-02-24")); //--> true
+console?.log(isValidDate("2030-02-90")); //--> false
 ```
 
 ## ★ Previous Packages
