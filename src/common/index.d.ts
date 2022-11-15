@@ -4,6 +4,6 @@
  @param {Date | String} date The specified date.
  @deprecated
  */
-declare function isValid(date?: string | Date): boolean;
+function isValid(date?: string | Date): boolean;
 
 export { isValid };
