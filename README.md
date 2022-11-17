@@ -15,6 +15,7 @@
 
 - getFormattedMilliseconds _(Formats milliseconds into an object containing days, hours, minutes, seconds and milliseconds)_ ~
 - Added the "isValidDate" function to the package.
+- Added the "formatAsPercentage" function to the package.
 - getCurrentFormattedTime _(Formats the current time in a bit cleaner manner)_
 - Timer _(Sets a complete timer for you. With events.)_
 - Seconds To Duration _(Converts seconds to a duration.)_
@@ -26,6 +27,7 @@
 - Get a timezone of a country by it's capital city/country name.
 - Get the time in a localized format -> "in xyz seconds"/"xyz seconds ago"
 - Get a formatted time.
+- Converts number to percentage.
 - Get the current in a formatted manner with some cool options.
 - Sets a timer for your. With the timer events.
 - Converts seconds to a proper formatted duration.
@@ -201,6 +203,19 @@ import { isValidDate } from "@myno_21/time";
 console?.log(isValidDate("2021-01-24")); //--> true
 console?.log(isValidDate("2020-02-24")); //--> true
 console?.log(isValidDate("2030-02-90")); //--> false
+```
+
+- # ★ Number To Percentage
+
+```ts
+// CommonJS
+const { formatAsPercentage } = require("@myno_21/time");
+// ECMAScript
+import { formatAsPercentage } from "@myno_21/time";
+
+const formattedPercentage = formatAsPercentage(31);
+
+console?.log(formatAsPercentage); // Output --> 31.00%
 ```
 
 ## ★ Previous Packages

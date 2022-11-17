@@ -1,6 +1,6 @@
 {
   "name": "@myno_21/time",
-  "version": "1.0.21",
+  "version": "1.0.24",
   "description": "Easiest way to get a timeZone, humanreable-time, Unix-Epoch timestamp and many more.",
   "main": "src/import/require.js",
   "repository": "https://github.com/TitBitTyrant/-Myno-time",
@@ -27,6 +27,9 @@
     "timezone",
     "timestamps",
     "easy-timestamp",
+    "percentage",
+    "number_format",
+    "percentage_format",
     "epoch-time",
     "npm-time",
     "section",
@@ -51,7 +54,7 @@
   "author": "Fetch",
   "license": "ISC",
   "dependencies": {
-    "@myno_21/time": "^1.0.12",
+    "@myno_21/time": "^1.0.23",
     "@types/node": "^17.0.45",
     "countries-and-timezones": "^3.3.0",
     "country-list": "^2.2.0",
