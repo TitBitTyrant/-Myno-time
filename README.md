@@ -9,6 +9,10 @@
 
 [![GitHub Actions](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MYN0/-Myno-time)
 
+## Update 👋
+
+- There was a issue going on with the package. A lot of typescript users were having some problems that they cannot use the package. So in the latest patch, the types is now created. So you can freely use the package with TypeScript so as with the normal JavaScript
+
 ## What's new? 🔗
 
 ### Added some more features:

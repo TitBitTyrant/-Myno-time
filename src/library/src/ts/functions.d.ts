@@ -1,4 +1,3 @@
-declare module "@myno21/time";
 /**
  * @default
  * @Checks for a date, whether it's a valid date or not.

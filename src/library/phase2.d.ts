@@ -1,18 +1,19 @@
+declare module "@myno21/time";
 interface Options {
-    /**
-     * @this option might be useful when you want to show the outcome in a lengthy way.
-     *@throws {RangeError | Error} If you didn't specified a boolean.
-     * @default false
-     * @return
-     */
-    verboose?: boolean;
-    /**
-     * @this option might be useful when you want to add a space in between the numbers & in between the value.
-     * @default false
-     *@throws {RangeError | Error} If you didn't specified a boolean.
-     * @return
-     */
-    spaceInBetween?: boolean;
+  /**
+   * @this option might be useful when you want to show the outcome in a lengthy way.
+   *@throws {RangeError | Error} If you didn't specified a boolean.
+   * @default false
+   * @return
+   */
+  verboose?: boolean;
+  /**
+   * @this option might be useful when you want to add a space in between the numbers & in between the value.
+   * @default false
+   *@throws {RangeError | Error} If you didn't specified a boolean.
+   * @return
+   */
+  spaceInBetween?: boolean;
 }
 /**
  * @default
@@ -37,5 +38,8 @@ function print(query) {
  * @param options The external options
  * @returns
  */
-declare function formatNumbers(number: number | void, options?: Options): string;
+declare function formatNumbers(
+  number: number | void,
+  options?: Options
+): string;
 export { formatNumbers };
