@@ -1,12 +1,14 @@
 {
   "name": "@myno_21/time",
-  "version": "1.0.24",
+  "version": "1.0.33",
   "description": "Easiest way to get a timeZone, humanreable-time, Unix-Epoch timestamp and many more.",
   "main": "src/import/require.js",
+  "types": "src/types/index.d.ts",
   "repository": "https://github.com/TitBitTyrant/-Myno-time",
   "type": "commonjs",
   "scripts": {
     "dev": "tsc --watch",
+    "copy-typescript-definitions": "copyfiles -u 1 \"src/**/*.d.ts\" types",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "publishConfig": {
@@ -54,7 +56,7 @@
   "author": "Fetch",
   "license": "ISC",
   "dependencies": {
-    "@myno_21/time": "^1.0.23",
+    "@myno_21/time": "^1.0.30",
     "@types/node": "^17.0.45",
     "countries-and-timezones": "^3.3.0",
     "country-list": "^2.2.0",
